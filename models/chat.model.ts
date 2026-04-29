@@ -4,7 +4,7 @@ export interface IMessage extends Document {
     senderId: string;
     receiverId: string;
     message: string;
-    senderName: string;
+    senderName: string;      
 }
 
 const ChatSchema = new Schema({
