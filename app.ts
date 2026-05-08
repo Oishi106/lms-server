@@ -4,7 +4,7 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import { errorMiddleware } from "./middleware/error";
 import userRouter from "./routes/user.route";
-import courseRouter from "./routes/course.route"; // নতুন রাউট ইম্পোর্ট
+import courseRouter from "./routes/course.route"; 
 
 export const app = express();
 
@@ -17,12 +17,12 @@ app.use(cookieParser());
 // cors
 app.use(cors({
   origin: process.env.ORIGIN,
-  credentials: true, // কুকি ট্রান্সফারের জন্য এটি সাধারণত প্রয়োজন হয়
+  credentials: true, 
 }));
 
 // routes
 app.use("/api/v1", userRouter);
-app.use("/api/v1", courseRouter); // কোর্স রাউট কানেক্ট করা হলো
+app.use("/api/v1", courseRouter); 
 
 // test api
 app.get("/test", (req: Request, res: Response, next: NextFunction) => {
